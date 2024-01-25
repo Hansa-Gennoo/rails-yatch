@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
-  belongs_to :yatchs
+  belongs_to :yachts
   belongs_to :users
 
   validates :start_date, presence: true
