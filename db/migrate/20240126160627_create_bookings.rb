@@ -4,7 +4,7 @@ class CreateBookings < ActiveRecord::Migration[7.1]
       t.date :start_date
       t.date :end_date
       t.integer :total_price
-      t.references :yatchs, null: false, foreign_key: true
+      t.references :yachts, null: false, foreign_key: true
       t.references :users, null: false, foreign_key: true
 
       t.timestamps
