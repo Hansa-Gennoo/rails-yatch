@@ -7,21 +7,12 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-Yacht.create(name: "Yaasir", capacity: 10, description: "Beautiful yacht for 10 people for your next event!", price_per_day: 15000)
+Yacht.destroy_all
 
-id | image | capacity | price_per_day | description | created_at | updated_at | user_id | name
+Yacht.create(name: "Yaasir", capacity: 10, description: "Beautiful yacht for 10 people for your next event!", price_per_day: 15000, image: "https://cdn.boatinternational.com/convert/files/2022/07/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.jpg/r%5Bwidth%5D=1920/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.webp", user_id: User.last.id)
 
-"https://cdn.boatinternational.com/convert/files/2022/07/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.jpg/r%5Bwidth%5D=1920/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.webp"
-10
+Yacht.create(name: "Pearl", capacity: 15, description: "Beautiful yacht for 10 people for your next event!", price_per_day: 20000, image: "https://cdn.boatinternational.com/convert/files/2022/07/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.jpg/r%5Bwidth%5D=1920/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.webp", user_id: User.last.id)
 
-"Beautiful yacht for 10 people for your next event!"
-20000
-Yaasir
+Yacht.create(name: "Ocean", capacity: 20, description: "Beautiful yacht for 10 people for your next event!", price_per_day: 30000, image: "https://cdn.boatinternational.com/convert/files/2022/07/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.jpg/r%5Bwidth%5D=1920/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.webp", user_id: User.last.id)
 
-Yacht.create(name: "Yaasir", capacity: 10, description: "Beautiful yacht for 10 people for your next event!", price_per_day: 15000, image: "https://cdn.boatinternational.com/convert/files/2022/07/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.jpg/r%5Bwidth%5D=1920/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.webp")
-
-Yacht.create(name: "Pearl", capacity: 15, description: "Beautiful yacht for 10 people for your next event!", price_per_day: 20000, image: "https://cdn.boatinternational.com/convert/files/2022/07/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.jpg/r%5Bwidth%5D=1920/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.webp")
-
-Yacht.create(name: "Ocean", capacity: 20, description: "Beautiful yacht for 10 people for your next event!", price_per_day: 30000, image: "https://cdn.boatinternational.com/convert/files/2022/07/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.jpg/r%5Bwidth%5D=1920/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.webp")
-
-Yacht.create(name: "Marina", capacity: 30, description: "Beautiful yacht for 10 people for your next event!", price_per_day: 40000, image: "https://cdn.boatinternational.com/convert/files/2022/07/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.jpg/r%5Bwidth%5D=1920/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.webp")
+Yacht.create(name: "Marina", capacity: 30, description: "Beautiful yacht for 10 people for your next event!", price_per_day: 40000, image: "https://cdn.boatinternational.com/convert/files/2022/07/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.jpg/r%5Bwidth%5D=1920/76393b30-0096-11ed-aed3-f71d7c568098-AHPO-hero-Photography-guillaume-plisson.webp", user_id: User.last.id)
