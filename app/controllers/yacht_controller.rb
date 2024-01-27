@@ -3,6 +3,10 @@ class YachtController < ApplicationController
     @yachts = Yacht.all
   end
 
+  def show
+    @yacht = Yacht.find(params[:id])
+  end
+
   def new
     @yacht = Yacht.new
   end
