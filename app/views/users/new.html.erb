@@ -1,9 +1,10 @@
 <h1>Users#new</h1>
 <p>Find me in app/views/users/new.html.erb</p>
 <!-- app/views/users/new.html.erb -->
+
 <h1>Register</h1>
 
-<%= form_with(model: @user, url: create_user_path, method: :post) do |form| %>
+<%= form_for @user, url: users_path, method: :post do |form| %>
   <div>
     <%= form.label :first_name, 'First Name:' %>
     <%= form.text_field :first_name, required: true %>
@@ -33,3 +34,4 @@
     <%= form.submit 'Register' %>
   </div>
 <% end %>
+

@@ -1,2 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Welcome to our Yacht Booking Page</h1>
+
+<% if user_signed_in? %>
+  <%= puts "User is signed in!" %>
+  <% @yachts.each do |yacht| %>
+    <div>
+      <h2><%= yacht.name %></h2>
+      <p><%= yacht.description %></p>
+      <%= image_tag(yacht.image_url, alt: yacht.name, width: 300) %>
+      <%= link_to "View Details", yacht_path(yacht) %>
+
+      <% if current_user == yacht.user %>
+        <%= link_to "Edit Yacht", edit_yacht_path(yacht) %>
+        <%= link_to "Delete Yacht", yacht_path(yacht), method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <p>No yachts available for booking.</p>
+<% end %>

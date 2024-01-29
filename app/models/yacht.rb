@@ -1,5 +1,6 @@
 class Yacht < ApplicationRecord
+  belongs_to :user
   has_many :bookings
-  # belongs_to :users
-end
 
+  # attribute :image_url, :string
+end

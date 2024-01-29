@@ -1,13 +1,19 @@
+<!-- app/views/yachts/new.html.erb -->
+
 <div class="form-booking">
   <%= form_with model: @yacht do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
+
     <%= f.label :price_per_day %>
     <%= f.number_field :price_per_day %>
+
     <%= f.label :capacity %>
     <%= f.number_field :capacity %>
+
     <%= f.label :description %>
     <%= f.text_field :description %>
+
     <%= f.submit %>
   <% end %>
 </div>

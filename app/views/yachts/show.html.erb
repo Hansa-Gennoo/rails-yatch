@@ -1,0 +1,7 @@
+<h1><%= @yacht.name %></h1>
+<p><%= @yacht.description %></p>
+<p>Price per Day: <%= @yacht.price_per_day %></p>
+<p>Capacity: <%= @yacht.capacity %></p>
+
+<% image_url = @yacht.image.present? ? @yacht.image : "https://www.absoluteyachts.com/web/app/uploads/2016/08/45-sty-intera.jpg" %>
+<%= image_tag(image_url, alt: @yacht.name, width: 400) %>
