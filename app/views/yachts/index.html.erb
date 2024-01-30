@@ -1,12 +1,24 @@
+<h1>Yachts</h1>
+
+<% if current_user %>
+  <%= link_to "New Yacht", new_yacht_path, class: "btn btn-primary" %>
+<% end %>
+
 <div class="yachts-container">
   <% @yachts.each do |yacht| %>
-  <div class="yacht">
-    <%= yacht.name %>
-    <%= yacht.description %>
-    <%= yacht.price_per_day %>
-    <%= yacht.capacity%>
+    <div class="yacht">
+      <h2><%= yacht.name %></h2>
+      <p><%= yacht.description %></p>
+      <p>Price per Day: <%= yacht.price_per_day %></p>
+      <p>Capacity: <%= yacht.capacity %></p>
 
+      <% image_url = yacht.image.present? ? yacht.image : "https://www.absoluteyachts.com/web/app/uploads/2016/08/45-sty-intera.jpg" %>
+      <%= image_tag(image_url, alt: yacht.name, width: 400) %>
 
-  </div>
+      <% if current_user && current_user == yacht.user %>
+        <%= link_to "Edit", edit_yacht_path(yacht), class: "btn btn-secondary" %>
+        <%= link_to "Delete", yacht_path(yacht), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+      <% end %>
+    </div>
   <% end %>
 </div>
