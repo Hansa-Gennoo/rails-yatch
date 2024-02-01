@@ -5,3 +5,16 @@
 
 <% image_url = @yacht.image.present? ? @yacht.image : "https://www.absoluteyachts.com/web/app/uploads/2016/08/45-sty-intera.jpg" %>
 <%= image_tag(image_url, alt: @yacht.name, width: 400) %>
+
+<%= form_with model: @booking do |f| %>
+  <%= f.label :start_date %>
+  <%= f.date_field :start_date %>
+
+  <%= f.label :end_date %>
+  <%= f.date_field :end_date %>
+
+  <%= f.label :yacht_id %>
+  <%= f.select :yacht_id, options_for_select(current_user.yachts.map{ |y| [y.name, y.id] }), {}, { prompt: 'Select Yacht' } %>
+
+  <%= f.submit %>
+<% end %>

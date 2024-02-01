@@ -78,3 +78,5 @@ group :test do
   gem "selenium-webdriver"
   gem 'bcrypt', '~> 3.1.16'
 end
+
+gem 'flatpickr'

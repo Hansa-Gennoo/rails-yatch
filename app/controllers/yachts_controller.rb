@@ -3,10 +3,12 @@ class YachtsController < ApplicationController
 
   def index
     @yachts = Yacht.all
+    @yachts = @yachts.where(user: current_user) if current_user
   end
 
   def show
     @yacht = Yacht.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -24,7 +26,8 @@ class YachtsController < ApplicationController
   end
 
   def edit
-    @yacht = current_user.yachts.find(params[:id])
+    @yacht = Yacht.find(params[:id])
+    redirect_to root_path unless current_user == @yacht.user
   end
 
   def update
@@ -38,12 +41,12 @@ class YachtsController < ApplicationController
   end
 
   def destroy
-    @yacht = current_user.yachts.find(params[:id])
+    @yacht = Yacht.find(params[:id])
+    redirect_to root_path unless current_user == @yacht.user
+
     @yacht.destroy
     redirect_to yachts_path, notice: 'Yacht was successfully destroyed.'
   end
-
-  # Add other actions as needed
 
   private
 
