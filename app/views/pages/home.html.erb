@@ -1,7 +1,5 @@
 <h1>Welcome to our Yacht Booking Page</h1>
 
-<%= link_to "Discover our Yachts", yachts_path, class: "btn btn-primary" %>
-
 <% if user_signed_in? %>
   <%= puts "User is signed in!" %>
   <% @yachts.each do |yacht| %>
@@ -17,4 +15,6 @@
       <% end %>
     </div>
   <% end %>
+<% else %>
+  <p>No yachts available for booking.</p>
 <% end %>
