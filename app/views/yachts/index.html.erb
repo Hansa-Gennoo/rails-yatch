@@ -4,16 +4,15 @@
   <%= link_to "New Yacht", new_yacht_path, class: "btn btn-primary" %>
 <% end %>
 
-<div class="yachts-container">
+<div class="card">
   <% @yachts.each do |yacht| %>
-    <div class="yacht">
-      <h2><%= yacht.name %></h2>
-      <p><%= yacht.description %></p>
-      <p>Price per Day: <%= yacht.price_per_day %></p>
-      <p>Capacity: <%= yacht.capacity %></p>
+    <div class="card-body">
+      <h2 class="card-title"><%= yacht.name %></h2>
+      <p class="card-text"><%= yacht.description %></p>
+      <p class="card-text">Price per Day: <%= yacht.price_per_day %></p>
+      <p class="card-text">Capacity: <%= yacht.capacity %></p>
 
-      <% image_url = yacht.image.present? ? yacht.image : "https://www.absoluteyachts.com/web/app/uploads/2016/08/45-sty-intera.jpg" %>
-      <%= image_tag(image_url, alt: yacht.name, width: 400) %>
+      <img src="https://www.absoluteyachts.com/web/app/uploads/2016/08/45-sty-intera.jpg" class="card-img-top" style="width: 600px;" >
 
       <%= link_to "View More", yacht_path(yacht), class: "btn btn-primary" %>
       <%= link_to "Edit", edit_yacht_path(yacht), class: "btn btn-secondary" %>
