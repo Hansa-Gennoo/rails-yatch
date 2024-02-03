@@ -10,7 +10,7 @@
       <tr>
         <td><%= booking.start_date %></td>
         <td><%= booking.end_date %></td>
-        <td><%= booking.total_price %></td>
+        <td>$<%= booking.total_price %></td>
         <td>
           <%= link_to "Delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
         </td>

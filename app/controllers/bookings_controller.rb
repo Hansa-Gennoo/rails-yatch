@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.total_price = (@booking.end_date - @booking.start_date) * @yacht.price_per_day
     @booking.save!
-    redirect_to yachts_path, notice: 'Booking was successfully created.'
+    redirect_to bookings_path, notice: 'Booking was successfully created.'
   end
 
   def destroy
