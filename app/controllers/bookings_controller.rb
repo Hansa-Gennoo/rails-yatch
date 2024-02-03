@@ -18,6 +18,13 @@ class BookingsController < ApplicationController
     redirect_to yachts_path, notice: 'Booking was successfully created.'
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+
+    redirect_to bookings_path, notice: 'Booking has successfully destroyed.'
+  end
+
   private
 
   def booking_params
