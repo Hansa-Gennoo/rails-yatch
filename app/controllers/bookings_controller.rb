@@ -10,9 +10,9 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @yacht = Yacht.find(params[:yachts_id])
-    @booking.yachts_id = @yacht.id.to_i
-    @booking.users_id = current_user.id.to_i
+    @yacht = Yacht.find(params[:yacht_id])
+    @booking.yacht = @yacht
+    @booking.user = current_user
     @booking.total_price = (@booking.end_date - @booking.start_date) * @yacht.price_per_day
     @booking.save!
     redirect_to yachts_path, notice: 'Booking was successfully created.'
