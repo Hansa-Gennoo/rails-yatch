@@ -4,9 +4,9 @@
   <%= link_to "New Yacht", new_yacht_path, class: "btn btn-primary" %>
 <% end %>
 
-<div class="yachts-container">
+<div class="card">
   <% @yachts.each do |yacht| %>
-    <div class="yacht">
+    <div class="card-body">
       <h2><%= yacht.name %></h2>
       <p><%= yacht.description %></p>
       <p>Price per Day: <%= yacht.price_per_day %></p>
