@@ -1,5 +1,23 @@
-<ul>
+<div class="card booking-index" style="margin-bottom: 4rem;">
+  <table style="width: 100%; border: 1px solid hotpink; margin-bottom: 2rem;">
+    <tr>
+      <th> START DATE</th>
+      <th>END DATE</th>
+      <th>TOTAL PRICE</th>
+      <th>ACTIONS</th>
+    </tr>
   <% @bookings.each do |booking| %>
-    <%= booking.total_price %>
+      <tr>
+        <td><%= booking.start_date %></td>
+        <td><%= booking.end_date %></td>
+        <td><%= booking.total_price %></td>
+        <td>
+          <%= link_to "Delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+        </td>
+      </tr>
   <% end %>
-</ul>
+    </table>
+
+   <%= link_to "Back to Homepage", yachts_path, class: "btn btn-primary" %>
+
+</div>
