@@ -15,10 +15,8 @@
       <% image_url = yacht.image.present? ? yacht.image : "https://www.absoluteyachts.com/web/app/uploads/2016/08/45-sty-intera.jpg" %>
       <%= image_tag(image_url, alt: yacht.name, width: 400) %>
 
-      <% if current_user && current_user == yacht.user %>
-        <%= link_to "Edit", edit_yacht_path(yacht), class: "btn btn-secondary" %>
-        <%= link_to "Delete", yacht_path(yacht), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-      <% end %>
+      <%= link_to "View More", yacht_path(yacht), class: "btn btn-primary" %>
+      <%= link_to "Edit", edit_yacht_path(yacht), class: "btn btn-secondary" %>
     </div>
   <% end %>
 </div>

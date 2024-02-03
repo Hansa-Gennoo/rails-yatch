@@ -10,7 +10,7 @@ class YachtsController < ApplicationController
   end
 
   def new
-    @yacht = current_user.yachts.build
+    @yacht = Yacht.new
   end
 
   def create
@@ -24,22 +24,19 @@ class YachtsController < ApplicationController
   end
 
   def edit
-    @yacht = current_user.yachts.find(params[:id])
+    @yacht = Yacht.find(params[:id])
   end
 
   def update
-    @yacht = current_user.yachts.find(params[:id])
-
-    if @yacht.update(yacht_params)
-      redirect_to yacht_path(@yacht), notice: 'Yacht was successfully updated.'
-    else
-      render :edit, status: :unprocessable_entity
-    end
+    @yacht = Yacht.find(params[:id])
+    @yacht.update(yacht_params)
+    redirect_to yacht_path(@yacht)
   end
 
   def destroy
-    @yacht = current_user.yachts.find(params[:id])
+    @yacht = Yacht.find(params[:id])
     @yacht.destroy
+
     redirect_to yachts_path, notice: 'Yacht was successfully destroyed.'
   end
 
